@@ -1,33 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+
+* {
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
+  color: #00bf8f;
+  font-family: 'Lobster', Helvetica, sans-serif;
+  height: 100vh;
+  background: #007991;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #78ffd6, #007991);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #78ffd6, #007991); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  border: 2px white solid;
+  background: #C9D6FF;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #E2E2E2, #C9D6FF);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #E2E2E2, #C9D6FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  font-size: 72px;
+  color: -webkit-linear-gradient(to right, #001510, #00bf8f);  /* Chrome 10-25, Safari 5.1-6 */
+  color: linear-gradient(to right, #001510, #00bf8f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header img {
+  height: 12vh;
+  margin: 10px;
 }
+
+.text-input {
+  text-align: left;
+  position: absolute;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+  background: white;
+  border: 5px solid #ffffff;
+  border-radius: 20px;
+}
+
+.text-input input {
+  width: 80%;
+  height: 100%;
+  border-radius: 20px;
+  margin-right: 20px;
+  margin-left: 60px;
+  font-size: 28px;
+}
+
+.text-input button {
+  width: 80px;
+  height: 40px;
+  margin-left: 30px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  font-family: 'Lobster', Helvetica, sans-serif;
+}
+
+
