@@ -1,18 +1,28 @@
 import React from 'react';
 import logo from './logo.png';
 import './App.css';
-import MessageList from './MessageList';
 import TextInput from './TextInput.js';
+import NamePicker from './NamePicker.js';
+
 
 class App extends React.Component {
 
   state={
-    messages: []
+    messages: [],
+    name: "",
+    editName: false
   }
 
-  sendMessage = (m) => {
-    this.setState({messages: [...this.state.messages, m] })
-    console.log(this.state.messages)
+  gotMessage = (m) => {
+    const message = {
+      text: m,
+      from: this.state.name
+    }
+    const received = {
+      text: m,
+      from: "test"
+    }
+    this.setState({messages: [message, received,  ...this.state.messages]})
   }
 
   render() {
@@ -21,20 +31,25 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>
-          <img src={logo} alt="" />
-          <h1> Bolo</h1>
+          <div>
+            <img src={logo} alt="" />
+            <h1> Bolo</h1>
+          </div>
+          <NamePicker name={this.state.name} editName={this.state.editName} 
+          changeName={(n) => this.setState({name: n})} setEditName={(m) => this.setState({editName: m})}/>
         </header>
         <main className="messages">
           {messages.map((m, i)=>{
             return (
-              <div key={i} className="bubble-wrap">
-                <div className="bubble">
-                  <span>{m}</span>
+                <div key={i} className="bubble-wrap" style={(this.state.name !== m.from) ? {justifyContent: 'flex-end', marginRight: 10}: {}}>
+                  <div className="bubble" style={(this.state.name !== m.from) ? {background: '#cad7fe', color: 'white'}: {}}>
+                  <span className="bubble-name" style={(this.state.name !== m.from) ? {color: 'white'}: {}} >{m.from}</span>
+                    <span>{m.text}</span>
+                  </div>
                 </div>
-              </div>
           )})}
         </main>
-        <TextInput sendMessage={this.sendMessage} />
+        <TextInput sendMessage={this.gotMessage} />
       </div>
     );
   }
