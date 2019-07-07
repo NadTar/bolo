@@ -58,6 +58,7 @@ header div {
   bottom: 0;
   width: 100%;
   display: flex;
+  margin-bottom: 15px;
 }
 
 .text-input input {

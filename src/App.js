@@ -18,11 +18,7 @@ class App extends React.Component {
       text: m,
       from: this.state.name
     }
-    const received = {
-      text: m,
-      from: "test"
-    }
-    this.setState({messages: [message, received,  ...this.state.messages]})
+    this.setState({messages: [message, ...this.state.messages]})
   }
 
   render() {
