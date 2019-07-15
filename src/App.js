@@ -56,7 +56,7 @@ class App extends React.Component {
   send = (m) => {
     this.db.collection("messages").add({
       ...m,
-      from: this.state.name || 'No name',
+      from: this.state.name || 'Anonymouse',
       ts: Date.now()
     })
   }
@@ -103,7 +103,7 @@ class App extends React.Component {
         {this.state.showCamera && 
           <Camera takePicture={this.state.takePicture} />
         }
-        <TextInput sendMessage={(text) => this.send({text})} showCamera={() => this.send.showCamera = true}/>
+        <TextInput sendMessage={(text) => this.send({text})} showCamera={() => this.setState({showCamera:true})}/>
       </div>
     );
   }

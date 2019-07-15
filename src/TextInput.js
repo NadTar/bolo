@@ -23,7 +23,7 @@ class TextInput extends React.Component {
     render() {
         return (
         <div className ="text-input">
-            <button className="camera" onClick={this.showCamera}>
+            <button className="camera" onClick={this.props.showCamera}>
                 <FiCamera style={{height:15, width:15, color:0}} />
             </button>
             <input value={this.state.text} 
