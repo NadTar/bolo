@@ -62,7 +62,7 @@ header div {
 }
 
 .text-input input {
-  width: 80%;
+  width: calc(100% - 200px);
   height: 100%;
   margin: auto;
   font-family: 'Lobster', Helvetica, sans-serif;
@@ -86,9 +86,14 @@ header div {
   display: flex;
   justify-content: center;
   position: absolute;
-  right: 146px;
-  
+  right: 94px;
 }
+
+.camera {
+  left: 53px;
+}
+
+
 
 .text-input button:hover {
   cursor: pointer;
@@ -106,7 +111,9 @@ button img {
 }
 
 .messages {
-  height: calc(100% -120px);
+  height: calc(100% - 280px);
+  display: flex;
+  flex-direction: column-reverse;
   overflow: auto;
 }
 
@@ -117,14 +124,25 @@ button img {
   margin-top: 10px;
 }
 
+.bubble-wrap[from="you"] {
+  flex-direction: row-reverse;
+}
+
 .bubble {
   border-radius: 10px;
   padding: 10px;
   background: white;
   color: #00bf8f;
-  margin-left: 10px;
+  margin-left: 20px;
   margin-top: 10px;
   position: relative;
+}
+
+.bubble-wrap[from="you"] .bubble {
+  margin-left: auto;
+  margin-right: 20px;
+  background: #cad7fe;
+  color: white;
 }
 
 .bubble:before {
@@ -138,13 +156,22 @@ button img {
     background: inherit;
 }
 
+.bubble-wrap[from="you"] .bubble:before {
+  left: auto;
+  right: -3px;
+}
+
 .bubble-name{
   position: absolute;
-  color: orchid;
+  color: #C9D6FE;
   top: -13px;
   font-size:12px;
   left: 5px;
   font-family: 'Sniglet', Helvetica, sans-serif
+}
+
+.bubble-wrap[from="you"] .bubble-name {
+  color: white;
 }
 
 .edit-username{
@@ -165,7 +192,7 @@ button img {
   background:rgba(255,255,255,0.1)
 }
 .name-input{
-  color:#cc4cff;
+  color:#00bf8f;
   height:31px;
   border:1px solid white;
   border-radius:14px;
